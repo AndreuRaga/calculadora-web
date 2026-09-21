@@ -6,19 +6,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     switch ($operacion) {
         case 'sumar':
-            $_POST['resultado'] = $num1 + $num2;
+            $resultado = $num1 + $num2;
             break;
         case 'restar':
-            $_POST['resultado'] = $num1 - $num2;
+            $resultado = $num1 - $num2;
             break;
         case 'multiplicar':
-            $_POST['resultado'] = $num1 * $num2;
+            $resultado = $num1 * $num2;
             break;
         case 'dividir':
             if ($num2 != 0) {
-                $_POST['resultado'] = $num1 / $num2;
+                $resultado = $num1 / $num2;
             } else {
-                $_POST['resultado'] = "Error: División por 0";
+                $resultado = "Error: División por 0";
             }
     }
+    header("Location: index.html?resultado=" . $resultado);
+    exit();
 }
