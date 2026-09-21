@@ -5,6 +5,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $operacion = $_POST['operacion'];
 
     switch ($operacion) {
+        case 'sumar':
+            $_POST['resultado'] = $num1 + $num2;
+            break;
+        case 'restar':
+            $_POST['resultado'] = $num1 - $num2;
+            break;
         case 'multiplicar':
             $_POST['resultado'] = $num1 * $num2;
             break;
@@ -14,6 +20,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $_POST['resultado'] = "Error: División por 0";
             }
-            break;
     }
 }
