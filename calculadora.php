@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $num1 = $_POST['num1'];
     $num2 = $_POST['num2'];
     $operacion = $_POST['operacion'];
@@ -21,6 +21,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $resultado = "Error: División por 0";
             }
     }
-    header("Location: index.html?resultado=" . $resultado);
-    exit();
+    
+    echo "<!DOCTYPE html>";
+    echo "<html lang='es'>";
+    echo "<head><meta charset='UTF-8'><title>Calculadora web</title></head>";
+    echo "<body>";
+    echo "<h1>Calculadora web</h1>";
+    echo "<p>Resultado: " . $resultado . "</p>";
+    echo "<a href='index.html'>Volver a la calculadora</a>";
+    echo "</body></html>";
 }
